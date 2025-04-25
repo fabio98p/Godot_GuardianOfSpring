@@ -1,9 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://chhe6wmt8t843"]
+[gd_scene load_steps=7 format=3 uid="uid://chhe6wmt8t843"]
+
+[ext_resource type="Script" uid="uid://bid86ylowjisx" path="res://Menus/Credits/credits.gd" id="1_a0wjq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0sbl"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_anjm0"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8ajt"]
+
+[sub_resource type="Animation" id="Animation_crok4"]
+resource_name = "new_animation"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, -268), Vector2(577, 3862)]
+}
+
+[sub_resource type="Animation" id="Animation_a0wjq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -15,32 +35,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(512, -268)]
+"values": [Vector2(576, -268)]
 }
 
-[sub_resource type="Animation" id="Animation_k014k"]
-resource_name = "credits_escalation"
-length = 120.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 120),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(512, -268), Vector2(512, 3925)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ap6ct"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mosgp"]
 _data = {
-&"RESET": SubResource("Animation_anjm0"),
-&"credits_escalation": SubResource("Animation_k014k")
+&"RESET": SubResource("Animation_a0wjq"),
+&"new_animation": SubResource("Animation_crok4")
 }
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8ajt"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -49,26 +51,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a0wjq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(512, -268)
+position = Vector2(576, -268)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -572.0
-offset_bottom = 8828.0
+offset_top = -603.0
+offset_bottom = 8797.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j0sbl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ap6ct")
-}
-autoplay = "credits_escalation"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -285,3 +282,11 @@ offset_right = 330.0
 offset_bottom = -365.0
 scale = Vector2(11.1379, 8.69538)
 theme_override_styles/panel = SubResource("StyleBoxTexture_t8ajt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mosgp")
+}
+autoplay = "new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
