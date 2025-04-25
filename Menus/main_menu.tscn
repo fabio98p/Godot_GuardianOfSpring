@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1xywpmtnenv2"]
+
+[ext_resource type="Texture2D" uid="uid://bf4igbm5unj4m" path="res://Menus/Img/option-img.jpg" id="1_jf8mj"]
+[ext_resource type="Script" uid="uid://d4l53b2wqqx3s" path="res://Menus/main_menu.gd" id="1_p3jrs"]
+[ext_resource type="AudioStream" uid="uid://qfanyn7t01sw" path="res://test music.mp3" id="3_at0u2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3jrs"]
+texture = ExtResource("1_jf8mj")
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3jrs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p3jrs")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 113.0
+offset_right = 2.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "A CLASSIC SPRING THE GAME"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -50.0
+offset_right = 110.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "START GAME"
+
+[node name="CreditButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Music"
+
+[node name="SfxButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Sfx"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_at0u2")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="toggled" from="HBoxContainer/MusicButton" to="." method="_on_music_button_toggled"]
+[connection signal="toggled" from="HBoxContainer/SfxButton" to="." method="_on_sfx_button_toggled"]

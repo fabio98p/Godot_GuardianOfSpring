@@ -13,3 +13,7 @@ config_version=5
 config/name="GameJam_spring_desolation"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameController="*res://game_controller.gd"
