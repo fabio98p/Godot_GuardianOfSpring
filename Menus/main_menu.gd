@@ -19,12 +19,12 @@ func _process(delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 #	cambio scena al gioco
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Level/Prologue/Prologue.tscn")
 
 
 func _on_credit_button_pressed() -> void:
 	#	cambio scena a crediti
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Menus/Credits/credits.tscn")
 
 
 func _on_exit_button_pressed() -> void:

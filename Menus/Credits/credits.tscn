@@ -1,0 +1,287 @@
+[gd_scene load_steps=6 format=3 uid="uid://chhe6wmt8t843"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0sbl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_anjm0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(512, -268)]
+}
+
+[sub_resource type="Animation" id="Animation_k014k"]
+resource_name = "credits_escalation"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(512, -268), Vector2(512, 3925)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ap6ct"]
+_data = {
+&"RESET": SubResource("Animation_anjm0"),
+&"credits_escalation": SubResource("Animation_k014k")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8ajt"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, -268)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -572.0
+offset_bottom = 8828.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0sbl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ap6ct")
+}
+autoplay = "credits_escalation"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.5
+offset_right = 310.5
+offset_bottom = 258.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Teams" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "
+
+
+
+DEVELOPER TEAMS
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Teams_testo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Game Director / Project Lead - Fabio and Mirko
+
+Game Designer - Fabio and Mirko
+
+Programmer(s) - Fabio and Mirko
+
+Art Director / Artists Sprites -  Mirko 
+
+Music & Sound Design - Fabio
+
+Writers - Fabio and Mirko
+
+QA Testers - Fabio and Mirko 
+
+Producers - Fabio and Mirko
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Tools" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TOOLS AND SOFTWARE
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Tools_testo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "-Godot
+
+-Libresprite
+
+-Audacity
+
+-LMMS
+
+
+
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Asset" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "ASSETS/MUSIC WE USED
+
+
+"
+horizontal_alignment = 1
+
+[node name="Asset_testo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ALL BRAND NEW FROM US AKA SKIRAT AND GAMES (without and, only skirat games)"
+horizontal_alignment = 1
+
+[node name="Ringraziamenti3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "SPECIAL THANKS
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Ringraziamenti_testo2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "We would like to thank Itch.io and Brackeys for this amazing game jam! 
+
+We had a lot of fun and are really proud of what we managed to create,
+
+ even though we’re not very skilled in graphics or sound design. 
+
+This was our first jam, and it definitely won’t be the last...
+
+We also want to thank our friend Carlo,
+
+ who helped us with some translation errors and game testing.
+
+
+
+
+And,
+
+of course,
+
+THANK YOU
+
+for playing this game! 😊
+
+We truly hope you had at least half as much fun playing it as we did making it. 😃
+
+
+Fabio: \"ciao colleghi!\"
+
+Mirko: \"ciao colleghi carissimi!\"
+
+
+
+
+
+
+See you in LOREM IPSUM 2
+
+
+
+(now in 2.5D!)
+
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Ringraziamenti2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Dedicated to the memory 
+
+of Fountain (Thirsty)
+
+"
+horizontal_alignment = 1
+
+[node name="The_END" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = -713.0
+offset_right = 724.0
+offset_bottom = -308.0
+theme_override_font_sizes/font_size = 48
+text = "
+
+
+
+THE END
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+max_distance = 10000.0
+attenuation = 5.69478e-05
+
+[node name="cover" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = -405.0
+offset_right = 330.0
+offset_bottom = -365.0
+scale = Vector2(11.1379, 8.69538)
+theme_override_styles/panel = SubResource("StyleBoxTexture_t8ajt")

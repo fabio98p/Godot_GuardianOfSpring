@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://fxkfox5w4r0n"]
+
+[ext_resource type="Script" uid="uid://dtd4q17cy1jg1" path="res://Level/Scenes/flower/flower.gd" id="1_52ex8"]
+[ext_resource type="Texture2D" uid="uid://5k5hhu5gu7d3" path="res://icon.svg" id="1_hdax0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_luss6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bewu3"]
+radius = 68.0294
+
+[node name="Flower" type="Node2D"]
+script = ExtResource("1_52ex8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.29245, 0.709806, 1)
+material = SubResource("CanvasItemMaterial_luss6")
+texture = ExtResource("1_hdax0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bewu3")
