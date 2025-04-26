@@ -1,13 +1,30 @@
-[gd_scene load_steps=11 format=3 uid="uid://bom1uajiqy0b8"]
+[gd_scene load_steps=13 format=3 uid="uid://bom1uajiqy0b8"]
 
 [ext_resource type="PackedScene" uid="uid://baiaroadeq2ye" path="res://Level/Scenes/player.tscn" id="1_o6mkr"]
 [ext_resource type="Script" uid="uid://codb4d42xyv3d" path="res://Level/level.gd" id="1_uawph"]
+[ext_resource type="Texture2D" uid="uid://fnbgaylokdjm" path="res://Assets/Sprite/sfondo.png" id="2_d6qko"]
 [ext_resource type="Texture2D" uid="uid://5k5hhu5gu7d3" path="res://icon.svg" id="2_qmtf6"]
 [ext_resource type="Script" uid="uid://b650rslsp5dnt" path="res://Level/time_countdown.gd" id="4_52x1o"]
 [ext_resource type="PackedScene" uid="uid://fxkfox5w4r0n" path="res://Level/Scenes/flower/flower.tscn" id="5_iincs"]
 [ext_resource type="AudioStream" uid="uid://qfanyn7t01sw" path="res://test music.mp3" id="6_nk1il"]
+[ext_resource type="PackedScene" uid="uid://uydgfgqdjglk" path="res://Level/Scenes/enemy.tscn" id="8_22cqp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o6mkr"]
+
+[sub_resource type="Animation" id="Animation_d6qko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 324)]
+}
 
 [sub_resource type="Animation" id="Animation_nk1il"]
 resource_name = "test prova"
@@ -25,21 +42,6 @@ tracks/0/keys = {
 "values": [Vector2(576, 324), Vector2(576, -362)]
 }
 
-[sub_resource type="Animation" id="Animation_d6qko"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, 324)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_22cqp"]
 _data = {
 &"RESET": SubResource("Animation_d6qko"),
@@ -49,6 +51,10 @@ _data = {
 [node name="Level" type="Node2D"]
 script = ExtResource("1_uawph")
 timeLastWave = 5.0
+
+[node name="sfondo" type="Sprite2D" parent="."]
+position = Vector2(577, 322)
+texture = ExtResource("2_d6qko")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -72,9 +78,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Flower" parent="." instance=ExtResource("5_iincs")]
 position = Vector2(575, 424)
 scale = Vector2(0.53, 0.53)
-
-[node name="Player" parent="." instance=ExtResource("1_o6mkr")]
-position = Vector2(427, 241)
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2(512, 631)
@@ -120,5 +123,13 @@ libraries = {
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(581, -355)
 texture = ExtResource("2_qmtf6")
+
+[node name="Enemy" parent="." instance=ExtResource("8_22cqp")]
+position = Vector2(865, 268)
+scale = Vector2(0.5, 0.5)
+
+[node name="Player" parent="." instance=ExtResource("1_o6mkr")]
+position = Vector2(368, 584)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
