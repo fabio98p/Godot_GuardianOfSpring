@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://uydgfgqdjglk"]
 
-[ext_resource type="Texture2D" uid="uid://jeklq86rqm58" path="res://Assets/Sprite/Illustration46.png" id="1_ntke4"]
-[ext_resource type="Texture2D" uid="uid://bmp3ge07lkuew" path="res://Assets/Sprite/Illustration36.png" id="2_gcv34"]
+[ext_resource type="Texture2D" path="res://Assets/Sprite/Illustration46.png" id="1_ntke4"]
+[ext_resource type="Texture2D" path="res://Assets/Sprite/Illustration36.png" id="2_gcv34"]
 
 [sub_resource type="Animation" id="Animation_qkxqh"]
 resource_name = "new_animation"

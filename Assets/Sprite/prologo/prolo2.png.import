@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jeklq86rqm58"
-path="res://.godot/imported/Illustration46.png-4fbabf571198065de394c9b4db797238.ctex"
+uid="uid://clex0ie85dfgq"
+path="res://.godot/imported/prolo2.png-508183d699943cad417ec1663b2d41d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite/Illustration46.png"
-dest_files=["res://.godot/imported/Illustration46.png-4fbabf571198065de394c9b4db797238.ctex"]
+source_file="res://Assets/Sprite/prologo/prolo2.png"
+dest_files=["res://.godot/imported/prolo2.png-508183d699943cad417ec1663b2d41d5.ctex"]
 
 [params]
 

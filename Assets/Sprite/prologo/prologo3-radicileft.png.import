@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmp3ge07lkuew"
-path="res://.godot/imported/Illustration36.png-315f560e8c8a6667fb214bb575954b89.ctex"
+uid="uid://c3fk1jv1aer8o"
+path="res://.godot/imported/prologo3-radicileft.png-713dcdd58a863b86603120758f9760e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite/Illustration36.png"
-dest_files=["res://.godot/imported/Illustration36.png-315f560e8c8a6667fb214bb575954b89.ctex"]
+source_file="res://Assets/Sprite/prologo/prologo3-radicileft.png"
+dest_files=["res://.godot/imported/prologo3-radicileft.png-713dcdd58a863b86603120758f9760e6.ctex"]
 
 [params]
 

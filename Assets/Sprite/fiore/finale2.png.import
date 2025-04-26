@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyp5wvybpyxs0"
-path="res://.godot/imported/Illustration3.png-117ab01300e45fd81dbecd45d0828eb6.ctex"
+uid="uid://dybjrk70he1bi"
+path="res://.godot/imported/finale2.png-77e91616fc4b0bd131c96b5266e34a5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite/Illustration3.png"
-dest_files=["res://.godot/imported/Illustration3.png-117ab01300e45fd81dbecd45d0828eb6.ctex"]
+source_file="res://Assets/Sprite/fiore/finale2.png"
+dest_files=["res://.godot/imported/finale2.png-77e91616fc4b0bd131c96b5266e34a5e.ctex"]
 
 [params]
 
