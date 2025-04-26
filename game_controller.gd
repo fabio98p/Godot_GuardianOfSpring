@@ -1,7 +1,15 @@
 extends Node
-#signal hasMusic
-#signal hasSfx
+
+var numberOfWave:int = 0
 
 
-func _process(delta: float) -> void:
-	pass
+enum flower_status{
+#	fase 1 del gioco
+	avvizzito, 
+#	fase 2 del gioco
+	semi_sbocciato,
+#	 fase 3 (finale) del gioco
+	eretto,
+#	fase 4 """""""""filmato"""""""" movimento della camera finale
+	sbocciato
+}
