@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://baiaroadeq2ye"]
+[gd_scene load_steps=14 format=3 uid="uid://baiaroadeq2ye"]
 
 [ext_resource type="Script" uid="uid://8nc85lotthah" path="res://Level/Scenes/player.gd" id="1_854k3"]
 [ext_resource type="Texture2D" uid="uid://bpyxsemi7sr80" path="res://Assets/Sprite/Player/run.png" id="3_44w16"]
 [ext_resource type="Texture2D" uid="uid://b2i285ivyj1vp" path="res://Assets/Sprite/Player/idle.png" id="3_ffnj0"]
+[ext_resource type="AudioStream" uid="uid://c68hirdi7s1ba" path="res://Assets/Audio/passi_corti.mp3" id="4_pwwca"]
+[ext_resource type="AudioStream" uid="uid://4w0qnxu0i67l" path="res://Assets/Audio/salto.mp3" id="5_gm0kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_854k3"]
 size = Vector2(126, 332)
@@ -14,6 +16,10 @@ region = Rect2(20, 350, 271, 350)
 [sub_resource type="AtlasTexture" id="AtlasTexture_44w16"]
 atlas = ExtResource("3_ffnj0")
 region = Rect2(292, 350, 271, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn0bv"]
+atlas = ExtResource("3_44w16")
+region = Rect2(573, 350, 271, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwwca"]
 atlas = ExtResource("3_44w16")
@@ -42,6 +48,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bn0bv")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pwwca")
 }, {
 "duration": 1.0,
@@ -65,6 +79,20 @@ shape = SubResource("RectangleShape2D_854k3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-67, -113)
 sprite_frames = SubResource("SpriteFrames_gm0kc")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.827806
+frame_progress = 0.638984
+
+[node name="AudioStreamPassi" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pwwca")
+volume_db = -20.8
+bus = &"Sfx"
+
+[node name="AudioStreamJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gm0kc")
+volume_db = -20.8
+bus = &"Sfx"
+
+[node name="AudioStreamAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gm0kc")
+volume_db = -20.8
