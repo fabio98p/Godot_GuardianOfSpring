@@ -1,15 +1,8 @@
 extends Node
 
+#0 -> avvizzito - inizio ondata 1
+#1 -> semi-sbocciato - inizio ondata 2
+#2 -> eretto - inizio ondata 3 FINALE
+#3 -< sbocciato - fiore brilla camera si muove in alto transizione al bianco poi crediti
+
 var numberOfWave:int = 0
-
-
-enum flower_status{
-#	fase 1 del gioco
-	avvizzito, 
-#	fase 2 del gioco
-	semi_sbocciato,
-#	 fase 3 (finale) del gioco
-	eretto,
-#	fase 4 """""""""filmato"""""""" movimento della camera finale
-	sbocciato
-}

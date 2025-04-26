@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 func _changeFlowerStatus():
 	match GameController.numberOfWave:
-		0: 	sprite_2d.modulate = Color.AQUA
-		1:	sprite_2d.modulate = Color.BLACK
-	
+		0: 	sprite_2d.modulate = Color.CHOCOLATE
+		1:	sprite_2d.modulate = Color.AQUA
+		2:	sprite_2d.modulate = Color.BLACK
+		3:	sprite_2d.modulate = Color.DARK_GREEN

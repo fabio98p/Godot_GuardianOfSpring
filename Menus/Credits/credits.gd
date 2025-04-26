@@ -15,3 +15,8 @@ func _process(delta: float) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
+
+
+func _on_button_pressed() -> void:
+#	aumentare velocità credits in caso
+	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
