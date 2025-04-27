@@ -141,6 +141,7 @@ scale = Vector2(9.76, 11.9615)
 shape = SubResource("RectangleShape2D_gm0kc")
 
 [node name="Sprite2D" type="Sprite2D" parent="AttackZone"]
+visible = false
 position = Vector2(70, -118)
 texture = ExtResource("8_bn0bv")
 

@@ -21,3 +21,8 @@ func _changeFlowerStatus():
 		1:	animation_player.play("eretto")
 		2:	animation_player.play("semisbocciato")
 		3:	animation_player.play("finale")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	GameController.loseGame = true
+	print("nemico")

@@ -13,6 +13,7 @@ extends Control
 func _ready() -> void:
 	GameController.numberOfWave = 0
 	GameController.emit_damage = false
+	GameController.loseGame = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
