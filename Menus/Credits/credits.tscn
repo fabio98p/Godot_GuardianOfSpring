@@ -159,13 +159,13 @@ horizontal_alignment = 1
 
 [node name="Ringraziamenti_testo2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "We would like to thank Itch.io and Brackeys for this amazing game jam! 
+text = "We would like to thank Itch.io for this amazing game jam! 
 
 We had a lot of fun and are really proud of what we managed to create,
 
  even though we’re not very skilled in graphics or sound design. 
 
-This was our first jam, and it definitely won’t be the last...
+This was our second jam, and it definitely won’t be the last...
 
 We also want to thank our friend Carlo,
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://baiaroadeq2ye"]
+[gd_scene load_steps=21 format=3 uid="uid://baiaroadeq2ye"]
 
 [ext_resource type="Script" uid="uid://8nc85lotthah" path="res://Level/Scenes/player.gd" id="1_854k3"]
 [ext_resource type="Texture2D" uid="uid://b2p8u3l3p3ayh" path="res://Assets/Sprite/Player/attack4.png" id="2_gm0kc"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c68hirdi7s1ba" path="res://Assets/Audio/passi_corti.mp3" id="4_pwwca"]
 [ext_resource type="AudioStream" uid="uid://4w0qnxu0i67l" path="res://Assets/Audio/salto.mp3" id="5_gm0kc"]
 [ext_resource type="AudioStream" uid="uid://bw25sq2kie8pn" path="res://Assets/Audio/spada.mp3" id="7_gb070"]
+[ext_resource type="Texture2D" uid="uid://5k5hhu5gu7d3" path="res://icon.svg" id="8_bn0bv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_854k3"]
 size = Vector2(126, 332)
@@ -129,11 +130,18 @@ volume_db = -3.962
 bus = &"Sfx"
 
 [node name="AttackZone" type="Area2D" parent="."]
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(66.2, -125)
 scale = Vector2(9.76, 11.9615)
 shape = SubResource("RectangleShape2D_gm0kc")
+
+[node name="Sprite2D" type="Sprite2D" parent="AttackZone"]
+position = Vector2(70, -118)
+texture = ExtResource("8_bn0bv")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

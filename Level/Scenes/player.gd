@@ -9,6 +9,8 @@ var is_attacking = false
 @onready var audio_stream_passi: AudioStreamPlayer2D = $AudioStreamPassi
 @onready var audio_stream_jump: AudioStreamPlayer2D = $AudioStreamJump
 @onready var audio_stream_attack: AudioStreamPlayer2D = $AudioStreamAttack
+@onready var player: CharacterBody2D = $"."
+@onready var attack_zone: Area2D = $AttackZone
 
 
 func _physics_process(delta: float) -> void:
@@ -50,8 +52,10 @@ func animation_handler(direction):
 	# handle the direction of the animation
 	if direction == -1:
 		animated_sprite_2d.flip_h = false
+		attack_zone.position.x = -251
 	elif direction == 1:
 		animated_sprite_2d.flip_h = true
+		attack_zone.position.x = 0.0
 	
 	#animated_sprite_2d.animation = animation_type
 	animated_sprite_2d.play(animation_type)
