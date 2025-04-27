@@ -53,7 +53,7 @@ func _changeWave():
 #	FINE LIVELLLO
 	endOldWave()
 #	timer di 4 secondi 
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(30.0).timeout
 #	INIZIO LIVELLO
 	stratNewWave()
 
@@ -68,6 +68,7 @@ func endOldWave():
 	GameController.numberOfWave += 1
 	changeFlowerStatusSignal.emit()
 	if GameController.numberOfWave == 3:
+		GameController.winGame  = true
 		ambient.stop()
 		win_game.play()
 		
@@ -85,11 +86,12 @@ func _on_lose_game_finished() -> void:
 	GameController.numberOfWave = 0
 	GameController.emit_damage = false
 	GameController.loseGame = false
+	GameController.winGame  = false
 	prevEndGame = false
 	get_tree().reload_current_scene()
 
 func spawn_enemies(velocita, enemyPos:Vector2, enemyRot):
-	if !GameController.loseGame:
+	if !GameController.loseGame  and !GameController.winGame:
 		var enemies = enemy_scene.instantiate()
 
 		#dire velocità dello spostamento
@@ -101,9 +103,13 @@ func spawn_enemies(velocita, enemyPos:Vector2, enemyRot):
 
 func timer_spawn_enemies():
 	await get_tree().create_timer(2.0).timeout
+	var velProg := 60
+	var spawnTimeProg := 2.5 
 	while !GameController.loseGame:
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(spawnTimeProg).timeout
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		var num = rng.randi_range(0, 3)
-		spawn_enemies(60, Vector2(spawnEnemyPos[num].posX, spawnEnemyPos[num].posY), spawnEnemyPos[num].rot )
+		spawn_enemies(velProg, Vector2(spawnEnemyPos[num].posX, spawnEnemyPos[num].posY), spawnEnemyPos[num].rot )
+		velProg += 2
+		spawnTimeProg -= 0.02 

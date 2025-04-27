@@ -14,7 +14,7 @@ func _ready() -> void:
 	GameController.numberOfWave = 0
 	GameController.emit_damage = false
 	GameController.loseGame = false
-
+	GameController.winGame  = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

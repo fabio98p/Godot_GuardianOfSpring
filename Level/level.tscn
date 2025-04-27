@@ -201,17 +201,13 @@ libraries = {
 }
 
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(581, -355)
 texture = ExtResource("2_qmtf6")
 
 [node name="Ambient" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_py82k")
 autoplay = true
-
-[node name="Enemy" parent="." instance=ExtResource("11_1teg4")]
-position = Vector2(-424, 412)
-rotation = 3.2306
-velocity = 60.0
 
 [node name="LoseGame" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_i5g78")

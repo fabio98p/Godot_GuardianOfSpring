@@ -8,3 +8,4 @@ extends Node
 var numberOfWave:int = 0
 var emit_damage:bool = false
 var loseGame:bool = false
+var winGame:bool = false

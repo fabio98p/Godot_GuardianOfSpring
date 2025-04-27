@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !GameController.loseGame:
+	if !GameController.loseGame  and !GameController.winGame:
 		if vulnerable and GameController.emit_damage:
 			await get_tree().create_timer(0.3).timeout
 			queue_free()

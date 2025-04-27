@@ -14,7 +14,7 @@ var is_attacking = false
 
 
 func _physics_process(delta: float) -> void:
-	if !GameController.loseGame:
+	if !GameController.loseGame :
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -62,7 +62,7 @@ func animation_handler(direction):
 	animated_sprite_2d.play(animation_type)
 	
 func _input(event: InputEvent) -> void:
-	if !GameController.loseGame:
+	if !GameController.loseGame :
 		if event.is_action_pressed("Jump") and is_on_floor():
 			audio_stream_jump.play()
 		if event.is_action_pressed("Right"):
