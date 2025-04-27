@@ -1,13 +1,52 @@
-[gd_scene load_steps=13 format=3 uid="uid://bom1uajiqy0b8"]
+[gd_scene load_steps=17 format=3 uid="uid://bom1uajiqy0b8"]
 
 [ext_resource type="PackedScene" uid="uid://baiaroadeq2ye" path="res://Level/Scenes/player.tscn" id="1_o6mkr"]
 [ext_resource type="Script" uid="uid://codb4d42xyv3d" path="res://Level/level.gd" id="1_uawph"]
 [ext_resource type="Texture2D" uid="uid://fnbgaylokdjm" path="res://Assets/Sprite/sfondo.png" id="2_d6qko"]
 [ext_resource type="Texture2D" uid="uid://5k5hhu5gu7d3" path="res://icon.svg" id="2_qmtf6"]
+[ext_resource type="Texture2D" uid="uid://b68fmlu1m2xwn" path="res://Assets/Sprite/Enviroments/lvl1.png" id="4_22cqp"]
 [ext_resource type="Script" uid="uid://b650rslsp5dnt" path="res://Level/time_countdown.gd" id="4_52x1o"]
 [ext_resource type="PackedScene" uid="uid://fxkfox5w4r0n" path="res://Level/Scenes/flower/flower.tscn" id="5_iincs"]
+[ext_resource type="Texture2D" uid="uid://b27qpwd0tva7k" path="res://Assets/Sprite/Enviroments/lvl2.png" id="5_wqlfs"]
 [ext_resource type="AudioStream" uid="uid://qfanyn7t01sw" path="res://test music.mp3" id="6_nk1il"]
-[ext_resource type="PackedScene" uid="uid://uydgfgqdjglk" path="res://Level/Scenes/enemy.tscn" id="8_22cqp"]
+
+[sub_resource type="Animation" id="Animation_py82k"]
+resource_name = "effetto_livello"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ground/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_22cqp"), ExtResource("5_wqlfs"), ExtResource("4_22cqp")]
+}
+
+[sub_resource type="Animation" id="Animation_1teg4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ground/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_22cqp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i5g78"]
+_data = {
+&"RESET": SubResource("Animation_1teg4"),
+&"effetto_livello": SubResource("Animation_py82k")
+}
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o6mkr"]
 
@@ -25,6 +64,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(576, 324)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sfondo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(577, 322)]
+}
 
 [sub_resource type="Animation" id="Animation_nk1il"]
 resource_name = "test prova"
@@ -41,6 +92,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(576, 324), Vector2(576, -362)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sfondo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(577, 322), Vector2(577, -363)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_22cqp"]
 _data = {
@@ -56,10 +119,38 @@ timeLastWave = 5.0
 position = Vector2(577, 322)
 texture = ExtResource("2_d6qko")
 
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2(512, 631)
+
+[node name="EffettoLivello" type="AnimationPlayer" parent="Ground"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_i5g78")
+}
+autoplay = "effetto_livello"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_o6mkr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(46, -339)
+texture = ExtResource("4_22cqp")
+
+[node name="Flower" parent="." instance=ExtResource("5_iincs")]
+position = Vector2(602, 516)
+scale = Vector2(0.53, 0.53)
+
+[node name="Player" parent="." instance=ExtResource("1_o6mkr")]
+position = Vector2(368, 584)
+scale = Vector2(0.5, 0.5)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -74,22 +165,6 @@ grow_vertical = 0
 size_flags_horizontal = 4
 text = "00 00"
 metadata/_edit_use_anchors_ = true
-
-[node name="Flower" parent="." instance=ExtResource("5_iincs")]
-position = Vector2(575, 424)
-scale = Vector2(0.53, 0.53)
-
-[node name="Ground" type="Node2D" parent="."]
-position = Vector2(512, 631)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_o6mkr")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-scale = Vector2(11.8281, 0.25)
-texture = ExtResource("2_qmtf6")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -115,7 +190,7 @@ volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="FineLivello" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_22cqp")
 }
@@ -124,12 +199,4 @@ libraries = {
 position = Vector2(581, -355)
 texture = ExtResource("2_qmtf6")
 
-[node name="Enemy" parent="." instance=ExtResource("8_22cqp")]
-position = Vector2(865, 268)
-scale = Vector2(0.5, 0.5)
-
-[node name="Player" parent="." instance=ExtResource("1_o6mkr")]
-position = Vector2(368, 584)
-scale = Vector2(0.5, 0.5)
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="FineLivello" to="." method="_on_animation_player_animation_finished"]

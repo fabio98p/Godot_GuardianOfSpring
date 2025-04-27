@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var level: Node2D = $".."
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _changeFlowerStatus():
 	match GameController.numberOfWave:
-		0: 	sprite_2d.modulate = Color.CHOCOLATE
-		1:	sprite_2d.modulate = Color.AQUA
-		2:	sprite_2d.modulate = Color.BLACK
-		3:	sprite_2d.modulate = Color.DARK_GREEN
+		0: 	animation_player.play("avvizzito")
+		1:	animation_player.play("eretto")
+		2:	animation_player.play("semisbocciato")
+		3:	animation_player.play("finale")

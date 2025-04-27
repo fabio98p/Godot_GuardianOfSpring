@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://baiaroadeq2ye"]
+[gd_scene load_steps=18 format=3 uid="uid://baiaroadeq2ye"]
 
 [ext_resource type="Script" uid="uid://8nc85lotthah" path="res://Level/Scenes/player.gd" id="1_854k3"]
+[ext_resource type="Texture2D" uid="uid://b0gqcl64i1j27" path="res://Assets/Sprite/Player/attack.png" id="2_gm0kc"]
 [ext_resource type="Texture2D" uid="uid://bpyxsemi7sr80" path="res://Assets/Sprite/Player/run.png" id="3_44w16"]
 [ext_resource type="Texture2D" uid="uid://b2i285ivyj1vp" path="res://Assets/Sprite/Player/idle.png" id="3_ffnj0"]
 [ext_resource type="AudioStream" uid="uid://c68hirdi7s1ba" path="res://Assets/Audio/passi_corti.mp3" id="4_pwwca"]
@@ -8,6 +9,18 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_854k3"]
 size = Vector2(126, 332)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3s8b"]
+atlas = ExtResource("2_gm0kc")
+region = Rect2(602, 350, 286, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ae2"]
+atlas = ExtResource("2_gm0kc")
+region = Rect2(316, 350, 286, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1jtx"]
+atlas = ExtResource("2_gm0kc")
+region = Rect2(888, 350, 286, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffnj0"]
 atlas = ExtResource("3_ffnj0")
@@ -35,6 +48,20 @@ region = Rect2(845, 350, 271, 350)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gm0kc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3s8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ae2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1jtx")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ffnj0")
@@ -79,9 +106,9 @@ shape = SubResource("RectangleShape2D_854k3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-67, -113)
 sprite_frames = SubResource("SpriteFrames_gm0kc")
-animation = &"jump"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.638984
+frame_progress = 0.313327
 
 [node name="AudioStreamPassi" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pwwca")
@@ -96,3 +123,4 @@ bus = &"Sfx"
 [node name="AudioStreamAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_gm0kc")
 volume_db = -20.8
+bus = &"Sfx"

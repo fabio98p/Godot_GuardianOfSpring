@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://rc3w658eq261"]
+[gd_scene load_steps=28 format=3 uid="uid://rc3w658eq261"]
 
 [ext_resource type="Script" uid="uid://ueie4onx5rpv" path="res://Level/Prologue/prologue.gd" id="1_3nvvg"]
 [ext_resource type="Texture2D" uid="uid://fnbgaylokdjm" path="res://Assets/Sprite/sfondo.png" id="2_pvhcq"]
@@ -8,7 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bvdcprk7aj6ha" path="res://Assets/Sprite/prologo/prologo1part2.png" id="6_ryr7o"]
 [ext_resource type="Texture2D" uid="uid://clex0ie85dfgq" path="res://Assets/Sprite/prologo/prolo2.png" id="7_kndee"]
 [ext_resource type="Texture2D" uid="uid://d0x4xa5lj5hcq" path="res://Assets/Sprite/prologo/prologo3-sfomdo.png" id="8_1nabo"]
+[ext_resource type="Texture2D" uid="uid://bigwy6npjx7g7" path="res://Assets/Sprite/prologo/prologo2-part2.png" id="8_vk3qn"]
 [ext_resource type="Texture2D" uid="uid://dofi0s54fyr8m" path="res://Assets/Sprite/prologo/prologo4.png" id="9_71mr7"]
+[ext_resource type="Texture2D" uid="uid://ca8u27pk8wjc5" path="res://Assets/Sprite/prologo/mont2.png" id="10_kndee"]
+[ext_resource type="Texture2D" uid="uid://di5a3iqxmi2t5" path="res://Assets/Sprite/prologo/radsinistraprologo.png" id="11_1nabo"]
+[ext_resource type="Texture2D" uid="uid://2mdji3suc5di" path="res://Assets/Sprite/prologo/raddestraprolog.png" id="12_pjtog"]
+[ext_resource type="Texture2D" uid="uid://1s7hwxtoy5w4" path="res://Assets/Sprite/prologo/prologo4 part2.png" id="14_1nabo"]
+[ext_resource type="AudioStream" uid="uid://fx8au5gm8frb" path="res://Assets/Audio/proluge_ambient _music.mp3" id="15_pjtog"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k53yr"]
 texture = ExtResource("2_pvhcq")
@@ -138,6 +144,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_hix0s"]
 resource_name = "sfondo2"
 length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -145,10 +152,10 @@ tracks/0/path = NodePath("Prologhi:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("7_kndee")]
+"values": [ExtResource("7_kndee"), ExtResource("8_vk3qn"), ExtResource("7_kndee")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -209,10 +216,10 @@ tracks/0/path = NodePath("Prologhi:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.59903, 2, 2.4, 2.8, 3.2, 3.6, 4, 4.4, 4.79903, 5.2, 5.6, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("8_1nabo")]
+"values": [ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee"), ExtResource("8_1nabo"), ExtResource("10_kndee")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -221,10 +228,10 @@ tracks/1/path = NodePath("Prologo3RadLeft:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6, 4, 4.4, 4.8, 5.2, 5.6, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_vk3qn")]
+"values": [ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo"), ExtResource("4_vk3qn"), ExtResource("11_1nabo")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -233,10 +240,10 @@ tracks/2/path = NodePath("Prologo3RadRight:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6, 4, 4.4, 4.8, 5.2, 5.6, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("5_r41rh")]
+"values": [ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog"), ExtResource("5_r41rh"), ExtResource("12_pjtog")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -301,7 +308,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_75o0l"]
 resource_name = "sfondo4"
-length = 3.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -333,10 +340,10 @@ tracks/2/path = NodePath("Prologhi:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.6, 4, 4.4, 4.8, 5.2, 5.6, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("9_71mr7")]
+"values": [ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo"), ExtResource("9_71mr7"), ExtResource("14_1nabo")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -533,3 +540,8 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_5vjex")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_pjtog")
+volume_db = -2.971
+autoplay = true

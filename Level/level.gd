@@ -4,7 +4,8 @@ extends Node2D
 @onready var time_countdown: Time_Countdown = $Time_countdown
 @export var timeLastWave:float
 @onready var flower: Node2D = $Flower
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@onready var fine_livello: AnimationPlayer = $FineLivello
 signal changeFlowerStatusSignal 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,7 +38,7 @@ func endOldWave():
 	if GameController.numberOfWave == 3:
 #		animazione della telecamera dopo animazione fiore che brilla qualche secondo e transizione in alto
 		await get_tree().create_timer(4.0).timeout
-		animation_player.play("test prova")
+		fine_livello.play("test prova")
 		pass
 
 
