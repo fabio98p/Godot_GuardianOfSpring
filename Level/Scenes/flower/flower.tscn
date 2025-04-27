@@ -15,6 +15,21 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bewu3"]
 radius = 68.0294
 
+[sub_resource type="Animation" id="Animation_4f5ve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_52ex8")]
+}
+
 [sub_resource type="Animation" id="Animation_tgpwg"]
 resource_name = "avvizzito"
 length = 0.8
@@ -49,23 +64,6 @@ tracks/0/keys = {
 "values": [ExtResource("4_r80yj"), ExtResource("5_xme1b"), ExtResource("4_r80yj")]
 }
 
-[sub_resource type="Animation" id="Animation_dg7jb"]
-resource_name = "semisbocciato"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_mlcs0"), ExtResource("7_r443i"), ExtResource("6_mlcs0")]
-}
-
 [sub_resource type="Animation" id="Animation_kfexf"]
 resource_name = "finale"
 length = 0.8
@@ -83,8 +81,10 @@ tracks/0/keys = {
 "values": [ExtResource("8_akemn"), ExtResource("9_dbosd"), ExtResource("8_akemn")]
 }
 
-[sub_resource type="Animation" id="Animation_4f5ve"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_dg7jb"]
+resource_name = "semisbocciato"
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,10 +92,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_52ex8")]
+"values": [ExtResource("6_mlcs0"), ExtResource("7_r443i"), ExtResource("6_mlcs0")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ilhf"]

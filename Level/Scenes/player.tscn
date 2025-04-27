@@ -1,26 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://baiaroadeq2ye"]
+[gd_scene load_steps=20 format=3 uid="uid://baiaroadeq2ye"]
 
 [ext_resource type="Script" uid="uid://8nc85lotthah" path="res://Level/Scenes/player.gd" id="1_854k3"]
-[ext_resource type="Texture2D" uid="uid://b0gqcl64i1j27" path="res://Assets/Sprite/Player/attack.png" id="2_gm0kc"]
+[ext_resource type="Texture2D" uid="uid://b2p8u3l3p3ayh" path="res://Assets/Sprite/Player/attack4.png" id="2_gm0kc"]
 [ext_resource type="Texture2D" uid="uid://bpyxsemi7sr80" path="res://Assets/Sprite/Player/run.png" id="3_44w16"]
 [ext_resource type="Texture2D" uid="uid://b2i285ivyj1vp" path="res://Assets/Sprite/Player/idle.png" id="3_ffnj0"]
 [ext_resource type="AudioStream" uid="uid://c68hirdi7s1ba" path="res://Assets/Audio/passi_corti.mp3" id="4_pwwca"]
 [ext_resource type="AudioStream" uid="uid://4w0qnxu0i67l" path="res://Assets/Audio/salto.mp3" id="5_gm0kc"]
+[ext_resource type="AudioStream" uid="uid://bw25sq2kie8pn" path="res://Assets/Audio/spada.mp3" id="7_gb070"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_854k3"]
 size = Vector2(126, 332)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3s8b"]
 atlas = ExtResource("2_gm0kc")
-region = Rect2(602, 350, 286, 350)
+region = Rect2(408, 350, 390, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26ae2"]
 atlas = ExtResource("2_gm0kc")
-region = Rect2(316, 350, 286, 350)
+region = Rect2(798, 350, 390, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1jtx"]
 atlas = ExtResource("2_gm0kc")
-region = Rect2(888, 350, 286, 350)
+region = Rect2(18, 350, 390, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffnj0"]
 atlas = ExtResource("3_ffnj0")
@@ -58,7 +59,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l1jtx")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -96,6 +97,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm0kc"]
+size = Vector2(15.7377, 20)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_854k3")
 
@@ -108,7 +112,6 @@ position = Vector2(-67, -113)
 sprite_frames = SubResource("SpriteFrames_gm0kc")
 animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.313327
 
 [node name="AudioStreamPassi" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pwwca")
@@ -121,6 +124,16 @@ volume_db = -20.8
 bus = &"Sfx"
 
 [node name="AudioStreamAttack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_gm0kc")
-volume_db = -20.8
+stream = ExtResource("7_gb070")
+volume_db = -3.962
 bus = &"Sfx"
+
+[node name="AttackZone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2(66.2, -125)
+scale = Vector2(9.76, 11.9615)
+shape = SubResource("RectangleShape2D_gm0kc")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

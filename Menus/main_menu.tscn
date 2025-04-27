@@ -1,15 +1,248 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1xywpmtnenv2"]
+[gd_scene load_steps=79 format=3 uid="uid://d1xywpmtnenv2"]
 
 [ext_resource type="Script" uid="uid://d4l53b2wqqx3s" path="res://Menus/main_menu.gd" id="1_p3jrs"]
 [ext_resource type="Texture2D" uid="uid://fnbgaylokdjm" path="res://Assets/Sprite/sfondo.png" id="2_11gta"]
 [ext_resource type="Texture2D" uid="uid://b68fmlu1m2xwn" path="res://Assets/Sprite/Enviroments/lvl1.png" id="3_cxdly"]
 [ext_resource type="Texture2D" uid="uid://cxm63dgx3754m" path="res://Assets/Sprite/fiore/avv1.png" id="4_gn11b"]
 [ext_resource type="AudioStream" uid="uid://b6c7k8hya3frb" path="res://Assets/Audio/menu_ambient _music.mp3" id="4_vxn86"]
+[ext_resource type="Texture2D" uid="uid://hqgl2yxid6bn" path="res://Assets/Sprite/icon/start.png" id="5_uayf2"]
 [ext_resource type="Texture2D" uid="uid://b27qpwd0tva7k" path="res://Assets/Sprite/Enviroments/lvl2.png" id="5_vxn86"]
+[ext_resource type="Texture2D" uid="uid://clq26cnp554u4" path="res://Assets/Sprite/icon/cred.png" id="6_55uyf"]
 [ext_resource type="Texture2D" uid="uid://cnxsdxjji85ya" path="res://Assets/Sprite/fiore/avv2.png" id="7_2k0p2"]
+[ext_resource type="Texture2D" uid="uid://divnsjuw7wm0i" path="res://Assets/Sprite/icon/exit.png" id="7_62ju1"]
+[ext_resource type="Texture2D" uid="uid://b7ffbl5s5h4yy" path="res://Assets/Sprite/icon/music1.png" id="8_30p73"]
+[ext_resource type="Texture2D" uid="uid://df62yambinuab" path="res://Assets/Sprite/icon/linea1.png" id="9_b716q"]
+[ext_resource type="Texture2D" uid="uid://e1gplap7rxy5" path="res://Assets/Sprite/icon/sfx.png" id="9_pgq7c"]
+[ext_resource type="Texture2D" uid="uid://lj0g4pqk2x33" path="res://Assets/Sprite/icon/start2.png" id="11_lx30u"]
+[ext_resource type="Texture2D" uid="uid://kga5keirbwoi" path="res://Assets/Sprite/icon/cred2.png" id="12_stbbo"]
+[ext_resource type="Texture2D" uid="uid://c6o6j2jdq2e8g" path="res://Assets/Sprite/icon/exit2.png" id="13_30p73"]
+[ext_resource type="Texture2D" uid="uid://7k3yoa0hcc1h" path="res://Assets/Sprite/icon/music2.png" id="17_yvd4r"]
+[ext_resource type="Texture2D" uid="uid://cultvbmwewgcq" path="res://Assets/Sprite/icon/linea2.png" id="18_rofim"]
+[ext_resource type="Texture2D" uid="uid://dxmfvxcgsa568" path="res://Assets/Sprite/icon/sfx2.png" id="19_vt8vr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3jrs"]
 texture = ExtResource("2_11gta")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2k0p2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y501u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uayf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55uyf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62ju1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lx30u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stbbo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30p73"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgq7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b716q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn11b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjhm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvd4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rofim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt8vr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_od3lt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6on4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5c1d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjaja"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g02jp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcb4i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2k0p2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doylv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q06p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8ak5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exeb3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4i0ov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbuwv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afvju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_waawm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m40k1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjnny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjw51"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmr7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1een"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbe3f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n8m7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yiy1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqcmj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf3xn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfm7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8d72e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwius"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abdjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghsgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhskc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jk6bf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a650w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jwhw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahdv4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2ny6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehuh1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14p3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckpgc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y6i7"]
+
+[sub_resource type="Animation" id="Animation_y501u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sfondo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_cxdly")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FioreMenu:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_gn11b")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer2/StartButton/start:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_uayf2")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer2/CreditButton/credit:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_55uyf")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HBoxContainer2/ExitButton/exit:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_62ju1")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HBoxContainer/MusicButton/music:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_30p73")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HBoxContainer/MusicButton/barraMusic:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_b716q")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HBoxContainer/SfxButton/sfx:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_pgq7c")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HBoxContainer/SfxButton/barraSfx:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_b716q")]
+}
 
 [sub_resource type="Animation" id="Animation_2k0p2"]
 resource_name = "new_animation"
@@ -39,32 +272,89 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("4_gn11b"), ExtResource("7_2k0p2")]
 }
-
-[sub_resource type="Animation" id="Animation_y501u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sfondo:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer2/StartButton/start:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_cxdly")]
+"values": [ExtResource("5_uayf2"), ExtResource("11_lx30u"), ExtResource("5_uayf2")]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FioreMenu:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer2/CreditButton/credit:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_gn11b")]
+"values": [ExtResource("6_55uyf"), ExtResource("12_stbbo"), ExtResource("6_55uyf")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HBoxContainer2/ExitButton/exit:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_62ju1"), ExtResource("13_30p73"), ExtResource("7_62ju1")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HBoxContainer/MusicButton/music:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_30p73"), ExtResource("17_yvd4r")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HBoxContainer/MusicButton/barraMusic:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("9_b716q"), ExtResource("18_rofim")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HBoxContainer/SfxButton/sfx:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("9_pgq7c"), ExtResource("19_vt8vr")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HBoxContainer/SfxButton/barraSfx:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("9_b716q"), ExtResource("18_rofim")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uayf2"]
@@ -114,7 +404,82 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -20.0
+offset_right = 163.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2k0p2")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_y501u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uayf2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_55uyf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_62ju1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lx30u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_stbbo")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_30p73")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pgq7c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b716q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gn11b")
+text = "                        "
+
+[node name="start" type="Sprite2D" parent="HBoxContainer2/StartButton"]
+position = Vector2(51, 20)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_uayf2")
+
+[node name="CreditButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jjhm6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yvd4r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rofim")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vt8vr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_od3lt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6on4w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w5c1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jjaja")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g02jp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hcb4i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2k0p2")
+text = "                          "
+
+[node name="credit" type="Sprite2D" parent="HBoxContainer2/CreditButton"]
+position = Vector2(47, 23)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_55uyf")
+
+[node name="ExitButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_doylv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0q06p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u8ak5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_exeb3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4i0ov")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jbuwv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_afvju")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_waawm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m40k1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vjnny")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pjw51")
+text = "                           "
+
+[node name="exit" type="Sprite2D" parent="HBoxContainer2/ExitButton"]
+position = Vector2(51, 19)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_62ju1")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,18 +494,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "START GAME"
-
-[node name="CreditButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "CREDITS"
-
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "EXIT"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -148,12 +501,57 @@ offset_bottom = 40.0
 
 [node name="MusicButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmr7m")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_k1een")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tbe3f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5n8m7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yiy1p")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_kqcmj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cf3xn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nfm7k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8d72e")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_rwius")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_abdjx")
 toggle_mode = true
-text = "Music"
+text = "             "
+
+[node name="music" type="Sprite2D" parent="HBoxContainer/MusicButton"]
+position = Vector2(25, 20)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_30p73")
+
+[node name="barraMusic" type="Sprite2D" parent="HBoxContainer/MusicButton"]
+visible = false
+position = Vector2(28, 17)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_b716q")
 
 [node name="SfxButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Sfx"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ghsgv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bhskc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jk6bf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_a650w")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5jwhw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ahdv4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e2ny6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ehuh1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_14p3a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ckpgc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2y6i7")
+toggle_mode = true
+text = "                "
+
+[node name="sfx" type="Sprite2D" parent="HBoxContainer/SfxButton"]
+position = Vector2(39, 19)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_pgq7c")
+
+[node name="barraSfx" type="Sprite2D" parent="HBoxContainer/SfxButton"]
+visible = false
+position = Vector2(33, 17)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_b716q")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vxn86")
@@ -167,8 +565,8 @@ libraries = {
 }
 autoplay = "new_animation"
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="HBoxContainer/MusicButton" to="." method="_on_music_button_toggled"]
 [connection signal="toggled" from="HBoxContainer/SfxButton" to="." method="_on_sfx_button_toggled"]

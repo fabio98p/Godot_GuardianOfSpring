@@ -1,7 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://uydgfgqdjglk"]
+[gd_scene load_steps=8 format=3 uid="uid://uydgfgqdjglk"]
 
-[ext_resource type="Texture2D" path="res://Assets/Sprite/Illustration46.png" id="1_ntke4"]
-[ext_resource type="Texture2D" path="res://Assets/Sprite/Illustration36.png" id="2_gcv34"]
+[sub_resource type="Resource" id="Resource_io565"]
+metadata/__load_path__ = "res://Assets/Sprite/Illustration46.png"
+
+[sub_resource type="Animation" id="Animation_p2trb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_io565")]
+}
+
+[sub_resource type="Resource" id="Resource_ntke4"]
+metadata/__load_path__ = "res://Assets/Sprite/Illustration46.png"
+
+[sub_resource type="Resource" id="Resource_gcv34"]
+metadata/__load_path__ = "res://Assets/Sprite/Illustration36.png"
+
+[sub_resource type="Resource" id="Resource_qkxqh"]
+metadata/__load_path__ = "res://Assets/Sprite/Illustration46.png"
 
 [sub_resource type="Animation" id="Animation_qkxqh"]
 resource_name = "new_animation"
@@ -17,22 +41,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_ntke4"), ExtResource("2_gcv34"), ExtResource("1_ntke4")]
-}
-
-[sub_resource type="Animation" id="Animation_p2trb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_ntke4")]
+"values": [SubResource("Resource_ntke4"), SubResource("Resource_gcv34"), SubResource("Resource_qkxqh")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t6hwc"]
@@ -45,7 +54,6 @@ _data = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
-texture = ExtResource("1_ntke4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

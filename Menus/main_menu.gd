@@ -6,10 +6,12 @@ extends Control
 @onready var music_button: Button = $HBoxContainer/MusicButton
 @onready var sfx_button: Button = $HBoxContainer/SfxButton
 
+@onready var barra_music: Sprite2D = $HBoxContainer/MusicButton/barraMusic
+@onready var barra_sfx: Sprite2D = $HBoxContainer/SfxButton/barraSfx
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	GameController.numberOfWave = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,10 +37,13 @@ func _on_music_button_toggled(is_muted: bool) -> void:
 #	togglare la musica 
 	var music_bus_index = AudioServer.get_bus_index("Music") 
 	AudioServer.set_bus_mute(music_bus_index,is_muted)
+	barra_music.visible = is_muted
 	print("ciao music mute")
 
 
 func _on_sfx_button_toggled(is_muted: bool) -> void:
+	print("ciao sfx")
 	#	togglare la sfx
 	var sfx_bus_index = AudioServer.get_bus_index("Sfx") 
 	AudioServer.set_bus_mute(sfx_bus_index,is_muted)
+	barra_sfx.visible = is_muted
