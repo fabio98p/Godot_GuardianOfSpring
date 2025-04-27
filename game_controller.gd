@@ -6,3 +6,4 @@ extends Node
 #3 -< sbocciato - fiore brilla camera si muove in alto transizione al bianco poi crediti
 
 var numberOfWave:int = 0
+var emit_damage:bool = false

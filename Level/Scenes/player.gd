@@ -75,8 +75,10 @@ func _input(event: InputEvent) -> void:
 		audio_stream_passi.stop()
 		await get_tree().create_timer(0.3).timeout
 		audio_stream_attack.play()
+		GameController.emit_damage = true
 		
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("attack")
 	if is_attacking:
 		is_attacking = false
+		GameController.emit_damage = false
