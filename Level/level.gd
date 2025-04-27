@@ -10,9 +10,35 @@ var prevEndGame:bool = false
 signal changeFlowerStatusSignal 
 @onready var ambient: AudioStreamPlayer2D = $Ambient
 @onready var win_game: AudioStreamPlayer2D = $WinGame
+@export var enemy_scene: PackedScene 
+#@export var spawnEnemyPos: Vector2
+var spawnEnemyPos := [
+	
+	{
+		"posX" : 1451.0,
+		"posY" : 508,
+		"rot" : 0.0,
+	},
+	{
+		"posX" : 1361.0,
+		"posY" : 831.0,
+		"rot" : 27.4,
+	},
+	{
+		"posX" : -45.0,
+		"posY" : 847.0,
+		"rot" : 150.8,
+	},
+	{
+		"posX" : -319.0,
+		"posY" : 425.0,
+		"rot" : 185.1,
+	},
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer_spawn_enemies()
 	time_countdown.endTimer.connect(Callable(self, "_changeWave"))
 	changeFlowerStatusSignal.emit()
 	
@@ -44,6 +70,7 @@ func endOldWave():
 	if GameController.numberOfWave == 3:
 		ambient.stop()
 		win_game.play()
+		
 #		animazione della telecamera dopo animazione fiore che brilla qualche secondo e transizione in alto
 		await get_tree().create_timer(4.0).timeout
 		fine_livello.play("test prova")
@@ -60,3 +87,23 @@ func _on_lose_game_finished() -> void:
 	GameController.loseGame = false
 	prevEndGame = false
 	get_tree().reload_current_scene()
+
+func spawn_enemies(velocita, enemyPos:Vector2, enemyRot):
+	if !GameController.loseGame:
+		var enemies = enemy_scene.instantiate()
+
+		#dire velocità dello spostamento
+		enemies.velocity = velocita
+
+		add_child(enemies)
+		enemies.position = enemyPos
+		enemies.rotation_degrees = enemyRot
+
+func timer_spawn_enemies():
+	await get_tree().create_timer(2.0).timeout
+	while !GameController.loseGame:
+		await get_tree().create_timer(1.0).timeout
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var num = rng.randi_range(0, 3)
+		spawn_enemies(60, Vector2(spawnEnemyPos[num].posX, spawnEnemyPos[num].posY), spawnEnemyPos[num].rot )

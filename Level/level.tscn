@@ -118,6 +118,7 @@ _data = {
 [node name="Level" type="Node2D"]
 script = ExtResource("1_uawph")
 timeLastWave = 5.0
+enemy_scene = ExtResource("11_1teg4")
 
 [node name="sfondo" type="Sprite2D" parent="."]
 position = Vector2(577, 322)
@@ -143,7 +144,7 @@ position = Vector2(46, -339)
 texture = ExtResource("4_22cqp")
 
 [node name="Flower" parent="." instance=ExtResource("5_iincs")]
-position = Vector2(602, 516)
+position = Vector2(602, 317)
 scale = Vector2(0.53, 0.53)
 
 [node name="Player" parent="." instance=ExtResource("1_o6mkr")]
@@ -208,7 +209,8 @@ stream = ExtResource("10_py82k")
 autoplay = true
 
 [node name="Enemy" parent="." instance=ExtResource("11_1teg4")]
-position = Vector2(1179, 330)
+position = Vector2(-424, 412)
+rotation = 3.2306
 velocity = 60.0
 
 [node name="LoseGame" type="AudioStreamPlayer2D" parent="."]
